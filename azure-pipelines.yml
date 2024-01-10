@@ -25,6 +25,7 @@ jobs:
     displayName: 'Install Flutter'
 
   - script: 
+      gem install cocoapods
       cd ios
       pod repo update
       pod install
