@@ -24,8 +24,17 @@ jobs:
       pwd
     displayName: 'Install Flutter'
 
-  - script: 
-      gem install cocoapods && cd ios && pod repo update && pod install
+  # - script: 
+  #     # gem install cocoapods && cd ios && pod repo update && pod install
+  #   displayName: 'Install CocoaPods dependencies'
+  - script: |
+      sudo gem install cocoapods
+    displayName: 'Install CocoaPods'
+
+  - script: |
+      cd ios
+      pod repo update
+      pod install
     displayName: 'Install CocoaPods dependencies'
 
   - script: |
