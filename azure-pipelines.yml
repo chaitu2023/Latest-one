@@ -77,6 +77,11 @@ jobs:
   - script: |
       cat /Users/runner/work/1/s/.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/bubble_bottom_bar.dart
     displayName: 'Print bubble_bottom_bar.dart content after replacement'
+  - script: |
+      cd ios
+      /usr/bin/xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -allowProvisioningUpdates
+    displayName: 'Build iOS'
+
 
   - script: |
       pwd
