@@ -90,3 +90,9 @@ jobs:
       cd $(Build.SourcesDirectory)      
       /Users/runner/work/1/s/flutter/bin/flutter build ios --release --no-codesign
     displayName: 'Build iOS'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.SourcesDirectory)/build/ios/iphoneos/Runner.app'
+      ArtifactName: 'iOS-Release'
+      publishLocation: 'Container'
+    displayName: 'PublishBuildArtifact'
