@@ -31,9 +31,16 @@ jobs:
       sudo gem install cocoapods
     displayName: 'Install CocoaPods'
 
+  # - script: |
+  #     cd ios
+  #     pod repo update
+  #     pod install
+  #   displayName: 'Install CocoaPods dependencies'
   - script: |
       cd ios
-      pod repo update
+      pod cache clean --all
+      pod deintegrate
+      pod setup
       pod install
     displayName: 'Install CocoaPods dependencies'
 
