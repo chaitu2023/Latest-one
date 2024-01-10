@@ -39,6 +39,7 @@ jobs:
   - script: |
       cd ios
       pod cache clean --all
+      rm Podfile.lock
       pod deintegrate
       pod setup
       pod install
