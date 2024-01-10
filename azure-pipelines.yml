@@ -64,19 +64,20 @@ jobs:
     displayName: 'Print badge.dart content after modification'
 
   - script: |
-      rm -f /Users/runner/work/1/s/.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/bubble_bottom_bar.dart
+      rm -f ../../../.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/bubble_bottom_bar.dart
     displayName: 'Remove Existing File'
 
   - task: CopyFiles@2
     inputs:
       sourceFolder: './'
       Contents: 'bubble_bottom_bar.dart'  # Specify the name of the new file
-      TargetFolder: '/Users/runner/work/1/s/.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/'  # Specify the target folder where you want to replace the file
+      TargetFolder: '../../../.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/'  # Specify the target folder where you want to replace the file
     displayName: 'Replace bubble_bottom_bar.dart'
 
   - script: |
       cat /Users/runner/work/1/s/.pub-cache/hosted/pub.dev/bubble_bottom_bar-2.0.0/lib/bubble_bottom_bar.dart
     displayName: 'Print bubble_bottom_bar.dart content after replacement'
+    
   # - script: |
   #     cd ios
   #     /usr/bin/xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -allowProvisioningUpdates
